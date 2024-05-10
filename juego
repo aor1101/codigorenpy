@@ -1,0 +1,384 @@
+define bot = Character('???', color="#FF8927")
+define Jeremias = Character('[nombre]', color="#FF0000")
+define juez = Character('juez', color="#FF9578")
+default felicida = 6
+default eco = 5
+
+label start:
+    image casas = "casa"
+    scene casas
+    image Jeremias = "a_feliz"
+    image juez = "a_triste"
+    image bot = "boto"
+    image cocheelect = "cochelec"
+    image cochega = "cochegas"
+    image Jessica = "jessica"
+    image amigos = "amigo"
+    image disco = "discos"
+    image bus = "schoolbus"
+    image padre = "papi"
+    image limpiador =  "limpiadora"
+    image basurero = "basur"
+    image camisetasuc = "camisetasucs"
+    image billete = "billetes"
+    image dinerooo = "dinero6"
+    image dineroo = "dinero5"
+    image dinero = "dinero4"
+    image dinero_ = "dinero3"
+    image dinero__ = "dinero2"
+    image dinero___ = "dinero1"
+
+    image vidaaa = "vida6"
+    image vidaa = "vida5"
+    image vida = "vida4"
+    image vida_ = "vida3"
+    image vida__ = "vida2"
+    image vida___ = "vida1"
+
+    image ecoo = "eco5"
+    image eco = "eco4"
+    image eco_ = "eco3"
+    image eco__ = "eco2"
+    image eco___ = "eco1"
+
+    $ nombre = renpy.input("Íngrese su nombre.")
+
+    
+    show bot at truecenter
+    show dinero___ at topright
+    show eco___ at top
+    show vida___ at topleft
+    bot "Hola, bienvenido a Bironment la ciudad más ecológica del mundo. Aquí tomarás decisiones de acuerdo sobre el desarrollo sostenible."
+    hide bot
+    with dissolve
+    
+    show Jeremias at left
+    Jeremias "Hola soy tu yo en este videojuego, tengo muchas ganas de tomar las mejores decisiones contigo 😀"
+    hide Jeremias
+    with dissolve
+
+    show juez at right
+    juez "Hola, yo soy el juez que juzgará tus acciones😀"
+    hide juez
+    with dissolve #33 Disolver
+    
+    show bot
+    bot "Bienvenido a tu nueva vida como ciudadano, eres [nombre] y tienes 18 años."
+    "¿Cómo te llamas?"
+    menu:
+        "[nombre]":
+            jump nombre   
+        "No te lo voy a decir 😞":
+            jump nombredos
+    return
+        
+label nombre:
+    bot "Bro encantado de conocerte"
+    show bot
+    bot "Ahora te enfrenatrás a tu primera decisión en este videojuego"
+    show cochega at right
+    show cocheelect at left
+    show dinero___ at topright
+    show eco___ at top
+    show vida___ at topleft
+    menu:
+        "Quiero el coche de gasolina":
+            jump cochegas
+        "Quiero el coche eléctrico":
+            jump cocheelect       
+    return
+label nombredos:
+    bot "Te presento a tu ciudad"
+    show bot
+    bot "Ahora te enfrenatrás a tu primera decisión en este videojuego"
+    show cochega at right
+    show cocheelect at left
+    show dinero___ at topright
+    show eco___ at top
+    show vida___ at topleft
+    menu:
+        "Quiero el coche de gasolina":
+            jump cochegas
+        "Quiero el coche eléctrico":
+            jump cocheelect
+    return
+
+label cochegas:
+    hide cocheelect
+    with dissolve
+    hide dinero___
+    with dissolve
+    show dinero__ at topright
+    hide eco___
+    with dissolve
+    show eco_ at top
+    show vida___ at topleft
+    bot "Este coche es más barato, tus padres lo agradecerán. Pero tus niveles de ecología han descendido pero ahora eres más feliz"
+    bot "Después de una noche de jueves movida 😈 te despiertas tarde y llegas tarde a la Universidad, ¿vas a coger el nuevo coche de tus padres sin permiso o cogerás el autobús como siempre?."
+    show bus at left
+    show padre at right
+    menu:
+        "Cojo el coche, por una vez no pasa nada.":
+            jump sinpermiso1  
+        "Prefiero no arriesgarme, quiero ir a la fiesta de Jessica el fin de semana.":
+            jump autobus1
+    return
+
+label cocheelect:
+    hide cochega
+    with dissolve
+    hide dinero___
+    with dissolve
+    hide vida___
+    with dissolve
+    show bot
+    show dinero_ at topright
+    show eco___ at top
+    show vida__ at topleft
+    bot "Este coche es más ecosostenible pero no te gusta tanto como el otro es verdad. Prefieres conducir un coche de verdad y no un frigorifico con ruedas"
+    bot "Después de una noche de jueves movida 😈 te despiertas tarde y llegas tarde a la Universidad, ¿vas a coger el nuevo coche de tus padres sin permiso o cogerás el autobús como siempre?."
+    hide cocheelect
+    with dissolve
+    show bus at left
+    show padre at right
+    menu:
+        "Cojo el coche, por una vez no pasa nada.":
+            jump sinpermiso2 
+        "Cogeré el bus, no quiero enfadar a mis padres.":
+            jump autobus2
+    return
+label sinpermiso1:
+    hide cocheelect
+    with dissolve
+    hide cochega
+    with dissolve
+    hide dinero__
+    with dissolve
+    show dinero_ at topright
+    hide bus
+    with dissolve
+    hide vida___
+    with dissolve
+    show eco_ at top
+    show vida__ at topleft
+    bot "Decides coger el coche de tus padres, llegando justo a la universidad"
+    bot "Tus padres descubren que has cogido su coche sin su permiso. TE HAN CASTIGADO SIN SALIR EN TODO EL FIN DE SEMANA.  "
+
+label sinpermiso2:
+    hide cocheelect
+    with dissolve
+    hide cochega
+    with dissolve
+    show dinero_ at topright
+    hide bus
+    with dissolve
+    hide vida__
+    with dissolve
+    hide eco___
+    with dissolve
+    show eco_ at top
+    show vida_ at topleft
+    bot "Decides coger el coche de tus padres, llegando justo a la universidad"
+    bot "Tus padres descubren que has cogido su coche sin su permiso. TE HAN CASTIGADO SIN SALIR EN TODO EL FIN DE SEMANA.  "
+    return
+label autobus1:
+    hide cocheelect
+    with dissolve
+    hide cochega
+    with dissolve
+    hide padre
+    with dissolve
+    hide dinero__
+    with dissolve
+    show dinero_ at topright
+    hide eco_
+    with dissolve
+    show eco__ at top
+    hide vida___
+    with dissolve
+    show vida__ at topleft
+    bot "Has llegado tarde y te han castigado. Tendrás que venir por la tarde a hacer las tareas, no te dará tiempo a ir a la fiesta de Jessica."
+    hide bus
+    bot "Sales de la universidad  te encuentras con el coche de Bob, él te llevará a la fiesta."
+    scene disco
+    show Jessica at left
+    show amigos at right
+    menu:
+        "Voy a pasarmelo bien con mis amigos.":
+            jump panas1
+        "Voy a hacerme a Jessica (con suerte dormiré en su casa)":
+            jump rizz1
+    return
+label autobus2:
+    hide cocheelect
+    with dissolve
+    hide cochega
+    with dissolve
+    hide padre
+    with dissolve
+    hide dinero_
+    with dissolve
+    hide vida__
+    with dissolve
+    show dinero at topright
+    hide eco___
+    with dissolve
+    show eco__ at top
+    show vida_ at topleft
+    bot "Has llegado tarde y te han castigado. Tendrás que venir por la tarde a hacer las tareas, no te dará tiempo a ir a la fiesta de Jessica."
+    hide bus
+    bot "Sales de la universidad  te encuentras con el coche de Bob, él te llevará a la fiesta."
+    scene disco
+    show Jessica at left
+    show amigos at right
+    menu:
+        "Voy a pasarmelo bien con mis amigos.":
+            jump panas2
+        "Voy a hacerme a Jessica (con suerte dormiré en su casa)":
+            jump rizz2
+    return
+label panas1:
+    hide Jessica
+    with dissolve
+    hide amigos
+    with dissolve
+    scene casas
+    show bot
+    show dinero_ at topright
+    show eco__ at top
+    hide vida__
+    with dissolve
+    show vida___ at topleft
+    show basurero at right
+    show limpiador at left
+    bot "Estas volviendo a tu casa con tus amigos y os encuentrais el suelo lleno de basura, ¿Qué haceis?"
+    menu:
+            "Recojeremos la basura, es lo correcto.":
+                jump recojo12
+            "No es nuestra culpa, ya lo recojerá un basurero.":
+                jump paso
+    return
+label panas2:
+    hide Jessica
+    with dissolve
+    hide amigos
+    with dissolve
+    scene casas
+    show bot
+    show dinero at topright
+    show eco__ at top
+    hide vida_
+    with dissolve
+    show vida__ at topleft
+    show basurero at right
+    show limpiador at left
+    bot "Estas volviendo a tu casa con tus amigos y os encuentrais el suelo lleno de basura, ¿Qué haceis?"
+    menu:
+            "Recojeremos la basura, es lo correcto.":
+                jump recojo13
+            "No es nuestra culpa, ya lo recojerá un basurero.":
+                jump paso
+    return
+label rizz1:
+    hide amigos
+    with dissolve
+    hide Jessica
+    with dissolve
+    scene casas
+    show bot
+    show dineroo at topright
+    show eco__ at top
+    hide vida_
+    with dissolve
+    show vida___ at topleft
+    bot "Tras una gran noche, te despiertas en casa de Jessica, volviendo a tu casa te encuentras el suelo de basura, ¿Qué haces? "
+    hide bot
+    with dissolve
+    show basurero at right
+    show limpiador at left
+    menu:
+            "Recojeré la basura, es lo correcto.":
+                jump recojo2
+            "No es culpa mía, ya lo recojerá un basurero.":
+                jump paso
+    return
+label rizz2:
+    hide amigos
+    with dissolve
+    hide Jessica
+    with dissolve
+    scene casas
+    show dineroo at topright
+    show eco__ at top
+    hide vida_
+    with dissolve
+    show vida___ at topleft
+    show bot
+    bot "Tras una gran noche, te despiertas en casa de Jessica, volviendo a tu casa te encuentras el suelo de basura, ¿Qué haces? "
+    hide bot
+    with dissolve
+    show basurero at right
+    show limpiador at left
+    menu:
+            "Recojeré la basura, es lo correcto.":
+                jump recojo2
+            "No es culpa mía, ya lo recojerá un basurero.":
+                jump paso
+    return
+
+label recojo12:
+    hide basurero
+    with dissolve
+    "Limpiaré todo el suelo, no soportó esto."
+    hide limpiador
+    with dissolve
+    show bot
+    show camisetasuc at left
+    bot "Conforme estás limpiando el suelo te ensucias tu camiseta favorita, pero decides seguir limpiando."
+    hide dinero_
+    with dissolve
+    show dinero___ at topright
+    show billete at right
+    bot "Al seguir limpiando encuentras un billete de 50 euros entre la basura. ES TU DÍA DE SUERTE."
+    return
+
+label recojo13:
+    hide basurero
+    with dissolve
+    "Limpiaré todo el suelo, no soportó esto."
+    hide limpiador
+    with dissolve
+    show bot
+    show camisetasuc at left
+    bot "Conforme estás limpiando el suelo te ensucias tu camiseta favorita, pero decides seguir limpiando."
+    hide dinero
+    with dissolve
+    show dinero___ at topright
+    show billete at right
+    bot "Al seguir limpiando encuentras un billete de 50 euros entre la basura. ES TU DÍA DE SUERTE."
+    return
+
+label recojo2:
+    hide basurero
+    with dissolve
+    "Limpiaré todo el suelo, no soportó esto."
+    hide limpiador
+    with dissolve
+    show bot
+    show camisetasuc at left
+    bot "Conforme estás limpiando el suelo te ensucias tu camiseta favorita, pero decides seguir limpiando."
+    hide dineroo
+    with dissolve
+    show dinero___ at topright
+    show billete at right
+    bot "Al seguir limpiando encuentras un billete de 50 euros entre la basura. ES TU DÍA DE SUERTE."
+    return
+
+
+label paso:
+    hide limpiador
+    with dissolve
+    "Paso, me da igual."
+    hide basurero
+    with dissolve
+    return
